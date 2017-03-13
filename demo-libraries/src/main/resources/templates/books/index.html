@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<nav th:replace="fragments :: navigation"></nav>
+<h1 th:text="${title}">My Library</h1>
+<p th:unless="${listing} and ${listing.size()}">None right now :(</p>
+
+<ul>
+    <li th:each="book : ${listing}" th:text="${book}"></li>
+</ul>
+
+</body>
+</html>
